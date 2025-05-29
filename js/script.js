@@ -33,3 +33,25 @@ document.querySelectorAll('a').forEach(links => {
         cursor2.classList.remove('active');
     }
 });
+
+//initialize emailjs
+(function(){
+    emailjs.init("DUzq2aDAERZroDxqv");
+})();
+
+document.addEventListener("DOMContentLoaded", function(){
+    const form = document.getElementById("contact-form");
+    if(form){
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+
+            emailjs.sendForm("service_lyzzldq", "template_8zy9qbf", this).then(function(){
+                alert("Message sent successfully!");
+                form.reset();
+            }, function(error){
+                alert("Failed to send message. Please try again.");
+                console.error("EmailJS error:", error);
+            });
+        });
+    }
+});

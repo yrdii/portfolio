@@ -77,7 +77,7 @@
                     <p> <span> location : </span> Toronto, Ontario, Canada </p>
                 </div>
             </div>
-            <a href="#" class="btn">download CV</a>
+            <a href="files/YiruDing_Resume.pdf" download class="btn">download CV</a>
             <a href="mailto:yiru.ding.1999@gmail.com" class="btn">hire me</a>
         </div>
     </div>
@@ -240,11 +240,11 @@
 
     <div class="row">
         <form action="">
-            <input type="text" placeholder="name" class="box">
-            <input type="email" placeholder="email" class="box">
-            <input type="number" placeholder="number" class="box">
+            <input type="text" name="from_name" placeholder="name" class="box">
+            <input type="email" name="reply_to" placeholder="email" class="box">
+            <input type="number" name="phone" placeholder="number" class="box">
 
-            <textarea name="" placeholder="message" id="" cols="30" rows="10"></textarea>
+            <textarea name="message" placeholder="message" id="" cols="30" rows="10"></textarea>
 
             <input type="submit" class="btn" value="send message">
         </form>
@@ -260,6 +260,9 @@
 
 <!-- custom js file link -->
 <script src="js/script.js"></script>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 </body>
 </html>
