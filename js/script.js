@@ -55,3 +55,12 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     }
 });
+
+//share projects
+function copyLink(url){
+    navigator.clipboard.writeText(url).then(()=>{
+        alert('Link copied to clipboard!');
+    }).catch(err=>{
+        alert('Failed to copy the link.');
+    });
+}
