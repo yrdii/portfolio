@@ -217,7 +217,7 @@ header .follow a:hover{
 }
 
 .about .row-1 .image{
-    flex: 1 1 25rem;
+    flex: 1 1 20rem;
 }
 
 .about .row-1 .image img{
@@ -247,7 +247,10 @@ header .follow a:hover{
 
 .about .row-1 .content p span{
     text-transform: none;
-    color: var(--main-color);
+    color: #666;
+    font-size: 1.7rem;
+    padding: .5rem 0;
+    font-weight: bold;
 }
 
 .about .row-1 .content .box-container{
