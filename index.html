@@ -258,6 +258,31 @@
 
 <!-- Include EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("YOUR_PUBLIC_KEY");
+
+    const form = document.getElementById("contact-form");
+    if (!form) {
+      console.error("Form not found!");
+      return;
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+        .then(() => {
+          alert("Message sent!");
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("Failed to send:", error);
+          alert("Failed to send message.");
+        });
+    });
+  });
+</script>
 
 <!-- custom js file link -->
 <script src="js/script.js"></script>

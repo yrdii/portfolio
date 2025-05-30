@@ -34,37 +34,6 @@ document.querySelectorAll('a').forEach(links => {
     }
 });
 
-//initialize emailjs
-  // Wait until everything has loaded
-  window.addEventListener("DOMContentLoaded", function () {
-    // ✅ Initialize EmailJS with your public key
-    emailjs.init("YOUR_PUBLIC_KEY");
-
-    // ✅ Select the form by ID
-    const form = document.getElementById("contact-form");
-
-    if (!form) {
-      console.error("Form not found!");
-      return;
-    }
-
-    // ✅ Add the event listener
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
-        .then(() => {
-          alert("Message sent!");
-          form.reset();
-        })
-        .catch((error) => {
-          console.error("Failed to send message:", error);
-          alert("Message failed to send.");
-        });
-    });
-  });
-
-
 //share projects
 function copyLink(url){
     navigator.clipboard.writeText(url).then(()=>{
