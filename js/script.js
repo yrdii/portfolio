@@ -11,7 +11,7 @@ window.onscroll = () => {
     header.classList.remove('active');
 }
 
-let cursor1 = document.querySelector('.cursor-1');
+/* let cursor1 = document.querySelector('.cursor-1');
 let cursor2 = document.querySelector('.cursor-2');
 
 window.onmousemove = (e) => {
@@ -32,7 +32,7 @@ document.querySelectorAll('a').forEach(links => {
         cursor1.classList.remove('active');
         cursor2.classList.remove('active');
     }
-});
+}); */
 
 //share projects
 function copyLink(url){
@@ -71,3 +71,7 @@ function openInNewTab(event, url){
     event.preventDefault();
     window.open(url, '_blank');
 }
+
+/* bgm */
+const bgm = document.getElementById('bgm');
+bgm.volume = 0.2;
