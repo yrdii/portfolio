@@ -214,7 +214,6 @@ header .follow a:hover{
     flex-wrap: wrap;
     gap: 1.5rem;
     padding-bottom: 2rem;
-    align-items: stretch;
 }
 
 .about .row-1 .image{
