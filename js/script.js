@@ -42,3 +42,27 @@ function copyLink(url){
         alert('Failed to copy the link.');
     });
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    const SERVICE_ID = 'service_lyzzldq';
+    const TEMPLATE_ID = 'template_8zy9qbf';
+    const PUBLIC_KEY = 'DUzq2aDAERZroDxqv';
+
+    emailjs.init(PUBLIC_KEY);
+
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this)
+          .then(() => {
+            alert('Message sent successfully!');
+            form.reset();
+            })
+          .catch(err => {
+            console.error('Failed to send message:', err);
+            alert('Failed to send message. Please try again later.');
+            });
+    });
+});

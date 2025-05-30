@@ -203,6 +203,7 @@ header .follow a:hover{
 }
 
 .home .content .text{
+    text-transform: none;
     font-size: 1.7rem;
     color: #666;
     padding: .5rem 0;
@@ -238,9 +239,15 @@ header .follow a:hover{
 }
 
 .about .row-1 .content p{
+    text-transform: none;
     color: #666;
     font-size: 1.7rem;
     padding: .5rem 0;
+}
+
+.about .row-1 .content p span{
+    text-transform: none;
+    color: var(--main-color);
 }
 
 .about .row-1 .content .box-container{
