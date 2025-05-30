@@ -260,7 +260,7 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
   window.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("YOUR_PUBLIC_KEY");
+    emailjs.init("DUzq2aDAERZroDxqv");
 
     const form = document.getElementById("contact-form");
     if (!form) {
@@ -271,7 +271,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+      emailjs.sendForm("service_lyzzldq", "template_8zy9qbf", this)
         .then(() => {
           alert("Message sent!");
           form.reset();
