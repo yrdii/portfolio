@@ -1,24 +1,25 @@
 let menu = document.querySelector('#menu-bars');
+let menuIcon = menu.querySelector('i');
 let header = document.querySelector('header');
 
 menu.onclick = () => {
-    menu.classList.toggle('fa-times');
+    menuIcon.classList.toggle('fa-times');
     header.classList.toggle('active');
 }
 
 window.onscroll = () => {
-    menu.classList.remove('fa-times');
+    menuIcon.classList.remove('fa-times');
     header.classList.remove('active');
 }
 
 menu.addEventListener('mouseenter', ()=>{
-    menu.classList.remove('fa-bars');
-    menu.classList.add('fa-bars-staggered');
+    menuIcon.classList.remove('fa-bars');
+    menuIcon.classList.add('fa-bars-staggered');
 });
 
 menu.addEventListener('mouseleave',()=>{
-    menu.classList.remove('fa-bars-staggered');
-    menu.classList.add('fa-bars');
+    menuIcon.classList.remove('fa-bars-staggered');
+    menuIcon.classList.add('fa-bars');
 });
 
 /* let cursor1 = document.querySelector('.cursor-1');
