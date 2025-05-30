@@ -124,7 +124,7 @@ header .follow a:hover{
     display: none;
 }
 
-.cursor-1{
+/* .cursor-1{
     position: absolute;
     top: 0;
     left: 0;
@@ -159,7 +159,7 @@ header .follow a:hover{
 
 .cursor-2.active{
     display: none;
-}
+} */
 
 .home{
     display: flex;
@@ -583,9 +583,9 @@ footer span{
         left: 0%;
     }
 
-    .cursor-1, .cursor-2{
+/*     .cursor-1, .cursor-2{
         display: none;
-    }
+    } */
 }
 
 @media (max-width:450px){

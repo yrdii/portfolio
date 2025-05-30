@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>YIRU'S PORTFOLIO</title>
 
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -16,8 +16,8 @@
 <body>
 
 <!-- custom cursors -->
-<div class="cursor-1"></div>
-<div class="cursor-2"></div>
+<!-- <div class="cursor-1"></div>
+<div class="cursor-2"></div> -->
 
 <div id="menu-bars" class="fas fa-bars"></div>
 
@@ -249,40 +249,37 @@
 </section>
 <!-- contact section end -->
 
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+      const SERVICE_ID = 'service_lyzzldq';
+      const TEMPLATE_ID = 'template_8zy9qbf';
+      const PUBLIC_KEY = 'DUzq2aDAERZroDxqv';
+
+      emailjs.init(PUBLIC_KEY);
+
+      const form = document.getElementById('contact-form');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this)
+          .then(() => {
+            alert('Message sent successfully!');
+            form.reset();
+          })
+          .catch(err => {
+            console.error('Failed to send message:', err);
+            alert('Failed to send message. Please try again later.');
+          });
+      });
+    });
+</script>
+
 <!-- footer section start -->
 <footer> created by <span> yiru ding </span> | all rights reserved. </footer>
 <!-- footer section end -->
-
-<!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<!-- Include EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  window.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("DUzq2aDAERZroDxqv");
-
-    const form = document.getElementById("contact-form");
-    if (!form) {
-      console.error("Form not found!");
-      return;
-    }
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      emailjs.sendForm("service_lyzzldq", "template_8zy9qbf", this)
-        .then(() => {
-          alert("Message sent!");
-          form.reset();
-        })
-        .catch((error) => {
-          console.error("Failed to send:", error);
-          alert("Failed to send message.");
-        });
-    });
-  });
-</script>
 
 <!-- custom js file link -->
 <script src="js/script.js"></script>
