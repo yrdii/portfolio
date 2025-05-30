@@ -34,7 +34,7 @@ document.querySelectorAll('a').forEach(links => {
     }
 });
 
-//initialize emailjs
+/* //initialize emailjs
 (function(){
     emailjs.init("DUzq2aDAERZroDxqv");
 })();
@@ -44,11 +44,12 @@ document.querySelector("form").addEventListener("submit", function(e){
 
     emailjs.sendForm("service_lyzzldq", "template_8zy9qbf", this).then(function(response){
         alert("Message sent successfully!");
+        this.reset();
     }, function(error){
         alert('Failed to send message. Please try again.');
         console.error(error);
     });
-});
+}); */
 
 //share projects
 function copyLink(url){
