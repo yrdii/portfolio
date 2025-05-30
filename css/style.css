@@ -73,7 +73,7 @@ section{
     border-radius: 50%;
     background: #fff;
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 0.8;
     box-shadow: 0 0 1rem rgba(0,0,0,.1);
 }
 
@@ -81,7 +81,7 @@ section{
     font-size: 2rem;
     display: block;
     background: #fff;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .bgm-control:hover i{
@@ -101,14 +101,14 @@ section{
     background: #fff;
     cursor: pointer;
     z-index: 10000;
-    opacity: 0.9;
+    opacity: 0.8;
     box-shadow: 0 0 1rem rgba(0,0,0,.1);
 }
 
 #menu-bars i{
     font-size: 2rem;
     display: block;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 #menu-bars:hover i{

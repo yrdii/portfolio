@@ -100,3 +100,19 @@ const startBgmOnMouseMove = () => {
 };
 
 document.addEventListener('mousemove',startBgmOnMouseMove);
+
+const toggleBtn = document.getElementById('bgm-toggle');
+const icon = document.getElementById('bgm-icon');
+
+toggleBtn.addEventListener('click',()=>{
+    if(bgm.paused){
+        bgm.play();
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
+    }
+    else{
+        bgm.pause();
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
+    }
+});
