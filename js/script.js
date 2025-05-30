@@ -86,3 +86,17 @@ function openInNewTab(event, url){
 /* bgm */
 const bgm = document.getElementById('bgm');
 bgm.volume = 0.2;
+
+let bgmStarted = false;
+const startBgmOnMouseMove = () => {
+    if(!bgmStarted) {
+        bgm.play().then(()=>{
+            bgmStarted = true;
+            document.removeEventListener('mousemove', startBgmOnMouseMove)
+        }).catch((err)=>{
+            console.log("Autoplay failed:", err);
+        });
+    }
+};
+
+document.addEventListener('mousemove',startBgmOnMouseMove);
