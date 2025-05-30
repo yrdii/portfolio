@@ -11,6 +11,16 @@ window.onscroll = () => {
     header.classList.remove('active');
 }
 
+menu.addEventListener('mouseenter', ()=>{
+    menu.classList.remove('fa-bars');
+    menu.classList.add('fa-bars-staggered');
+});
+
+menu.addEventListener('mouseleave',()=>{
+    menu.classList.remove('fa-bars-staggered');
+    menu.classList.add('fa-bars');
+});
+
 /* let cursor1 = document.querySelector('.cursor-1');
 let cursor2 = document.querySelector('.cursor-2');
 

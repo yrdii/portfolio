@@ -61,6 +61,15 @@ section{
     letter-spacing: .2rem;
 }
 
+.bgm-control{
+    display: inline-block;
+    position: fixed;
+    top: 10rem;
+    right: 1rem;
+    cursor: pointer;
+    background: none;
+}
+
 header{
     position: fixed;
     top: 0;
@@ -122,6 +131,10 @@ header .follow a:hover{
     font-size: 3rem;
     cursor: pointer;
     display: none;
+}
+
+#menu-bars:hover{
+    background: #403e3e;
 }
 
 /* .cursor-1{
