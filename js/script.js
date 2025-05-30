@@ -35,28 +35,35 @@ document.querySelectorAll('a').forEach(links => {
 });
 
 //initialize emailjs
-window.addEventListener("DOMContentLoaded", function () {
-  emailjs.init("YOUR_PUBLIC_KEY");
+  // Wait until everything has loaded
+  window.addEventListener("DOMContentLoaded", function () {
+    // ✅ Initialize EmailJS with your public key
+    emailjs.init("YOUR_PUBLIC_KEY");
 
-  const form = document.querySelector("form");
-  if (form) {
+    // ✅ Select the form by ID
+    const form = document.getElementById("contact-form");
+
+    if (!form) {
+      console.error("Form not found!");
+      return;
+    }
+
+    // ✅ Add the event listener
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
       emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
         .then(() => {
           alert("Message sent!");
-          this.reset(); // Optional
+          form.reset();
         })
         .catch((error) => {
-          console.error("Send failed:", error);
-          alert("Failed to send message");
+          console.error("Failed to send message:", error);
+          alert("Message failed to send.");
         });
     });
-  } else {
-    console.error("Form not found!");
-  }
-});
+  });
+
 
 //share projects
 function copyLink(url){
