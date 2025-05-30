@@ -34,22 +34,29 @@ document.querySelectorAll('a').forEach(links => {
     }
 });
 
-/* //initialize emailjs
-(function(){
-    emailjs.init("DUzq2aDAERZroDxqv");
-})();
+//initialize emailjs
+window.addEventListener("DOMContentLoaded", function () {
+  emailjs.init("YOUR_PUBLIC_KEY");
 
-document.querySelector("form").addEventListener("submit", function(e){
-    e.preventDefault();
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    emailjs.sendForm("service_lyzzldq", "template_8zy9qbf", this).then(function(response){
-        alert("Message sent successfully!");
-        this.reset();
-    }, function(error){
-        alert('Failed to send message. Please try again.');
-        console.error(error);
+      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+        .then(() => {
+          alert("Message sent!");
+          this.reset(); // Optional
+        })
+        .catch((error) => {
+          console.error("Send failed:", error);
+          alert("Failed to send message");
+        });
     });
-}); */
+  } else {
+    console.error("Form not found!");
+  }
+});
 
 //share projects
 function copyLink(url){
