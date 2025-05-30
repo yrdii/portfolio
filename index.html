@@ -235,11 +235,11 @@
 
     <div class="row">
         <form action="">
-            <input type="text" name="from_name" placeholder="name" class="box">
-            <input type="email" name="reply_to" placeholder="email" class="box">
-            <input type="number" name="phone" placeholder="number" class="box">
+            <input type="text" name="from_name" placeholder="name" class="box" required>
+            <input type="email" name="reply_to" placeholder="email" class="box" required>
+            <input type="number" name="phone" placeholder="phone number (Optional)" class="box">
 
-            <textarea name="message" placeholder="message" id="" cols="30" rows="10"></textarea>
+            <textarea name="message" placeholder="message" id="" cols="30" rows="10" required></textarea>
 
             <input type="submit" class="btn" value="send message">
         </form>
