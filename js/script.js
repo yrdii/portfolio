@@ -54,6 +54,7 @@ function copyLink(url){
     });
 }
 
+/* emailjs */
 window.addEventListener('DOMContentLoaded', () => {
     const SERVICE_ID = 'service_lyzzldq';
     const TEMPLATE_ID = 'template_8zy9qbf';
@@ -78,28 +79,34 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+/* open link in new tab */
 function openInNewTab(event, url){
     event.preventDefault();
     window.open(url, '_blank');
 }
 
 /* bgm */
-const bgm = document.getElementById('bgm');
-bgm.volume = 0.2;
+window.addEventListener('DOMContentLoaded', () => {
+  const bgm = document.getElementById('bgm');
+  if (!bgm) return;
 
-let bgmStarted = false;
-const startBgmOnClick = () => {
-    if(!bgmStarted) {
-        bgm.play().then(()=>{
-            bgmStarted = true;
-            document.removeEventListener('click', startBgmOnClick)
-        }).catch((err)=>{
-            console.log("Autoplay failed:", err);
-        });
+  bgm.volume = 0.2;
+  let bgmStarted = false;
+
+  const startBgmOnClick = () => {
+    if (!bgmStarted) {
+      bgm.play().then(() => {
+        bgmStarted = true;
+        document.removeEventListener('click', startBgmOnClick);
+      }).catch(err => {
+        console.log("Autoplay failed:", err);
+      });
     }
-};
+  };
 
-document.addEventListener('click',startBgmOnClick);
+  document.addEventListener('click', startBgmOnClick);
+});
+
 
 const toggleBtn = document.getElementById('bgm-toggle');
 const icon = document.getElementById('bgm-icon');
