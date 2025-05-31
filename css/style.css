@@ -119,6 +119,7 @@ section{
     display: block;
     text-align: center;
     line-height: 1.1;
+    font-weight: bold;
 }
 
 .top-btn:hover{

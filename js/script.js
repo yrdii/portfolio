@@ -93,7 +93,11 @@ window.addEventListener('DOMContentLoaded', () => {
   bgm.volume = 0.2;
   let bgmStarted = false;
 
-  const startBgmOnClick = () => {
+  const startBgmOnClick = (e) => {
+
+    const clickedElement = e.target;
+    if(clickedElement.closest('.top-btn')) return;
+
     if (!bgmStarted) {
       bgm.play().then(() => {
         bgmStarted = true;
