@@ -634,7 +634,6 @@ footer span{
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding: 1rem;
     z-index: 9999;
     opacity: 0.9;
 }
