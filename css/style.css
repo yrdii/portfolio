@@ -642,3 +642,13 @@ footer span{
         padding-right: 0;
     }
 }
+
+@media (min-width:992px){
+    #menu-bars{
+        display: none;
+    }
+
+    .bgm-control{
+        top: 2rem;
+    }
+}

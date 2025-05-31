@@ -88,18 +88,18 @@ const bgm = document.getElementById('bgm');
 bgm.volume = 0.2;
 
 let bgmStarted = false;
-const startBgmOnMouseMove = () => {
+const startBgmOnClick = () => {
     if(!bgmStarted) {
         bgm.play().then(()=>{
             bgmStarted = true;
-            document.removeEventListener('mousemove', startBgmOnMouseMove)
+            document.removeEventListener('click', startBgmOnClick)
         }).catch((err)=>{
             console.log("Autoplay failed:", err);
         });
     }
 };
 
-document.addEventListener('mousemove',startBgmOnMouseMove);
+document.addEventListener('click',startBgmOnClick);
 
 const toggleBtn = document.getElementById('bgm-toggle');
 const icon = document.getElementById('bgm-icon');
@@ -116,6 +116,20 @@ toggleBtn.addEventListener('click',()=>{
         icon.classList.add('fa-play');
     }
 });
+
+function updateIcon() {
+  if (bgm.paused) {
+    icon.classList.remove('fa-pause');
+    icon.classList.add('fa-play');
+  } else {
+    icon.classList.remove('fa-play');
+    icon.classList.add('fa-pause');
+  }
+}
+
+bgm.addEventListener('play', updateIcon);
+bgm.addEventListener('pause', updateIcon);
+updateIcon();
 
 /* slide-in animation */
 const observer = new IntersectionObserver((entries)=>{
