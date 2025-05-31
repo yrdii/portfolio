@@ -343,28 +343,10 @@ header .follow a:hover{
 .about .row-2 .skills .progress .bar span{
     display: block;
     height: 100%;
+    width: 0;
     background: var(--main-color);
     border-radius: 50rem;
-}
-
-.about .row-2 .skills .progress:nth-child(1) .bar span{
-    width: 95%;
-}
-
-.about .row-2 .skills .progress:nth-child(2) .bar span{
-    width: 95%;
-}
-
-.about .row-2 .skills .progress:nth-child(3) .bar span{
-    width: 80%;
-}
-
-.about .row-2 .skills .progress:nth-child(4) .bar span{
-    width: 80%;
-}
-
-.about .row-2 .skills .progress:nth-child(5) .bar span{
-    width: 70%;
+    transition: width 1s ease-in-out;
 }
 
 .about .row-2 .box-container{
@@ -606,6 +588,18 @@ footer{
 
 footer span{
     color: var(--main-color);
+}
+
+.slide-in{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+    transition-delay: 0.3s;
+}
+
+.slide-in.show{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* media queries */

@@ -116,3 +116,32 @@ toggleBtn.addEventListener('click',()=>{
         icon.classList.add('fa-play');
     }
 });
+
+/* slide-in animation */
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        }
+    });
+});
+
+document.querySelectorAll('.slide-in').forEach(el=>observer.observe(el));
+
+/* progress bar animation */
+function animateProgressBars() {
+    const bars = document.querySelectorAll('.bar span');
+
+    bars.forEach(bar => {
+        const rect = bar.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+        if (isVisible && bar.style.width === '') {
+            bar.style.width = bar.getAttribute('data-progress');
+        }
+    });
+}
+
+window.addEventListener('scroll', animateProgressBars);
+window.addEventListener('load', animateProgressBars);
