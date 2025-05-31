@@ -166,3 +166,20 @@ function animateProgressBars() {
 
 window.addEventListener('scroll', animateProgressBars);
 window.addEventListener('load', animateProgressBars);
+
+/* pixel character jump with bgm */
+const characters = document.querySelectorAll('.character');
+
+function setJumping(state){
+    characters.forEach(char=>{
+        if(state) {
+            char.classList.add('jumping');
+        }
+        else{
+            char.classList.remove('jumping');
+        }
+    });
+}
+
+bgm.addEventListener('play',()=>setJumping(true));
+bgm.addEventListener('pause',()=>setJumping(false));
