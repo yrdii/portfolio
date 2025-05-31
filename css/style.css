@@ -294,19 +294,6 @@ header .follow a:hover{
     padding-bottom: 2rem;
 }
 
-.about .row-1 .image{
-    flex: 1 1 20rem;
-}
-
-.about .row-1 .image img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border: 1rem solid #fff;
-    border-radius: .5rem;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-}
-
 .about .row-1 .content{
     flex: 1 1 50rem;
 }
@@ -447,12 +434,12 @@ header .follow a:hover{
     font-size: 2.5rem;
     padding: .5rem 0;
     color: #403e3e;
-
 }
 
 .experience .box-container .box .content p{
     font-size: 1.5rem;
     color: #666;
+    text-transform: none;
 }
 
 .portfolio .box-container{
