@@ -645,6 +645,7 @@ footer span{
 
 .jumping{
     animation: jump 1.3636s infinite;
+    animation-delay: 0.4s;
 }
 
 .jumping:nth-child(1){
