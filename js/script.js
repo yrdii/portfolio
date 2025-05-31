@@ -108,7 +108,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-const toggleBtn = document.getElementById('bgm-toggle');
+const toggleBtn = document.querySelector('.bgm-control');
 const icon = document.getElementById('bgm-icon');
 
 toggleBtn.addEventListener('click',()=>{
@@ -183,3 +183,18 @@ function setJumping(state){
 
 bgm.addEventListener('play',()=>setJumping(true));
 bgm.addEventListener('pause',()=>setJumping(false));
+
+/* back to top button */
+const backToTopBtn = document.querySelector('.top-btn');
+let topIcon = backToTopBtn.querySelector('i');
+backToTopBtn.addEventListener('click', ()=>{
+    window.scrollTo({top:0, behavior:'smooth'});
+});
+
+backToTopBtn.addEventListener('mouseenter', ()=>{
+    backToTopBtn.innerHTML = '<span class = "top-text">Back<br>to<br>Top</span>';
+});
+
+backToTopBtn.addEventListener('mouseleave', ()=>{
+    backToTopBtn.innerHTML = '<i id="top-icon" class="fa-solid fa-arrow-up"></i>';
+})
