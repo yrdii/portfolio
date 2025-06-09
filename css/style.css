@@ -206,6 +206,8 @@ header.active{
     position: fixed;
     overflow-y: auto;
     height: 100%;
+    overscroll-behavior: contain;
+    z-index: 10000;
 }
 
 .home{
