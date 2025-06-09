@@ -733,3 +733,17 @@ footer span{
         top: 2rem;
     }
 }
+
+@media (max-height:275px){
+    .bgm-control{
+        top: 2rem;
+        right: 8rem;
+    }
+}
+
+@media (max-height:225px){
+    .top-btn{
+        top: 2rem;
+        right: 14.5rem;
+    }
+}
